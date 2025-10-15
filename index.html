@@ -7,11 +7,13 @@
 <title>Joyeux anniversaire Maé 🎂</title>
 <style>
 :root {
+  --bg1:#1a0026;
+  --bg2:#3b005f;
   --accent1:#ff7a00;
   --accent2:#a855f7;
-  --gold:#FFD700;
   --muted:#e4d9ff;
   --radius:18px;
+  --shadow-color: rgba(255,122,0,0.4);
 }
 
 /* Reset & body */
@@ -19,141 +21,121 @@
 body{
   min-height:100vh;
   font-family:"Poppins",sans-serif;
+  background:linear-gradient(160deg,var(--bg1),var(--bg2));
+  color:var(--muted);
   overflow-x:hidden;
   scroll-behavior:smooth;
-  background:linear-gradient(160deg,#1a0026,#3b005f);
-  animation:bgGradient 20s infinite alternate;
-  color:var(--muted);
-  perspective:1000px;
-}
-
-/* Background gradient animation */
-@keyframes bgGradient{
-  0%{background:linear-gradient(160deg,#1a0026,#3b005f);}
-  50%{background:linear-gradient(160deg,#3b005f,#1a0026);}
-  100%{background:linear-gradient(160deg,#1a0026,#3b005f);}
+  position:relative;
 }
 
 /* Header */
-header{text-align:center;padding:60px 10px;position:relative;z-index:2;}
+header{text-align:center;padding:50px 10px;z-index:2;position:relative}
 .title{
-  font-size:46px;
+  font-size:44px;
   background:linear-gradient(45deg,var(--accent1),var(--accent2));
   -webkit-background-clip:text;color:transparent;
-  text-shadow:0 0 20px var(--accent2),0 0 30px var(--accent1);
-  animation:glowTitle 2s infinite alternate;
+  text-shadow:0 0 18px var(--accent2);
 }
-@keyframes glowTitle{
-  0%{text-shadow:0 0 20px var(--accent2),0 0 30px var(--accent1);}
-  100%{text-shadow:0 0 35px var(--accent2),0 0 50px var(--accent1);}
+#name{
+  color:var(--accent1);
+  text-shadow:0 0 25px var(--accent1),0 0 35px var(--accent2);
 }
-#name{color:var(--accent1);}
-.subtitle{color:#d9bfff;margin-top:10px;font-size:18px;text-shadow:0 0 8px rgba(255,255,255,0.3);}
-.hint{color:#ffb3ff;margin-top:12px;font-size:16px;font-weight:500;animation:blink 1.5s infinite;text-shadow:0 0 12px #ffb3ff;}
+.subtitle{
+  color:#d9bfff;
+  margin-top:8px;font-size:18px;text-shadow:0 0 6px rgba(255,255,255,0.3);
+}
+.hint{
+  color:#ffb3ff;
+  margin-top:12px;font-size:16px;font-weight:500;
+  animation:blink 1.5s infinite;text-shadow:0 0 10px #ffb3ff;
+}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.5}}
 
 /* Main & cards */
-main{max-width:950px;margin:auto;padding:20px;display:grid;gap:30px;z-index:2;position:relative;}
+main{max-width:950px;margin:auto;padding:20px;display:grid;gap:30px}
 .card{
   background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.1);
   border-radius:var(--radius);
   padding:24px;
-  box-shadow:0 16px 40px rgba(0,0,0,0.45);
+  box-shadow:0 14px 35px rgba(0,0,0,0.45);
   backdrop-filter:blur(12px);
   transition:transform 0.5s,box-shadow 0.5s,background 0.5s;
   opacity:0;
-  transform:translateY(40px) scale(0.95);
+  transform:translateY(40px);
   animation:fadeInUp 1s forwards;
 }
 .card:hover{
   transform:translateY(-6px) scale(1.03);
-  box-shadow:0 25px 60px rgba(255,122,0,0.4);
+  box-shadow:0 20px 50px var(--shadow-color);
   background:rgba(255,255,255,0.08);
 }
-@keyframes fadeInUp{to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
 
-h2{color:white;margin-bottom:12px;text-shadow:0 0 12px rgba(0,0,0,0.5)}
-p{line-height:1.6;}
+h2{color:white;margin-bottom:12px;text-shadow:0 0 10px rgba(0,0,0,0.5)}
+p{line-height:1.6}
 
-/* Bouton principal irrésistible et énorme */
-#btnStart {
-  display:inline-block;
-  position: relative;
-  z-index: 10;
-  padding: 22px 44px; /* encore plus grand */
-  font-size: 24px;     /* texte plus grand */
-  border-radius: 22px; /* coins plus arrondis */
-  font-weight:700;
-  margin-top:14px;
-  cursor:pointer;
-  transition:transform 0.3s,box-shadow 0.3s;
-  border: 4px solid white;
-  animation: pulseGlow 1.5s infinite, floatBtn 3s ease-in-out infinite, blinkGold 1s infinite alternate;
-  text-shadow:0 0 18px rgba(0,0,0,0.4);
-  background: linear-gradient(90deg,var(--accent1),var(--accent2));
-  color:white;
+/* Buttons */
+.btn{
+  display:inline-block;background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:white;padding:14px 26px;border-radius:14px;font-weight:600;margin-top:14px;
+  cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;font-size:18px;
+  border:2px solid white;animation:pulse 1.5s infinite;text-shadow:0 0 12px rgba(0,0,0,0.3);
 }
-
-#btnStart:hover{
-  transform:scale(1.22);
-  box-shadow:0 0 75px var(--accent2),0 0 55px var(--accent1),0 0 20px var(--gold);
+.btn:hover{
+  transform:scale(1.12);
+  box-shadow:0 0 45px var(--accent2),0 0 25px var(--accent1);
 }
-
-/* Animations du bouton */
-@keyframes pulseGlow {
-  0% { transform: scale(1); box-shadow: 0 0 30px var(--accent1), 0 0 60px var(--accent2);}
-  50% { transform: scale(1.25); box-shadow: 0 0 60px var(--accent2), 0 0 90px var(--accent1);}
-  100% { transform: scale(1); box-shadow: 0 0 30px var(--accent1), 0 0 60px var(--accent2);}
-}
-@keyframes floatBtn {
-  0%, 100% { transform: translateY(0);}
-  50% { transform: translateY(-12px);}
-}
-@keyframes blinkGold{
-  0% { box-shadow:0 0 50px var(--gold);}
-  100% { box-shadow:0 0 120px var(--gold);}
-}
+@keyframes pulse{0%{box-shadow:0 0 14px var(--accent1);}50%{box-shadow:0 0 40px var(--accent2);}100%{box-shadow:0 0 14px var(--accent1);}}
 
 /* Audio */
 .audio-container{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap;justify-content:center}
-audio{border-radius:12px;background:rgba(255,255,255,0.15);padding:6px;outline:none;width:260px;transition:transform 0.3s,box-shadow 0.3s;}
-audio:hover{transform:scale(1.03);box-shadow:0 0 28px var(--accent1)}
+audio{
+  border-radius:12px;background:rgba(255,255,255,0.15);padding:6px;outline:none;width:260px;
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+audio:hover{transform:scale(1.02);box-shadow:0 0 25px var(--accent1)}
 
 /* Gallery & Videos */
 .gallery{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
 .gallery img{
-  width:30%;height:220px;border-radius:16px;object-fit:cover;
+  width:30%;height:220px;border-radius:14px;object-fit:cover;
   transition:transform 0.5s,box-shadow 0.5s,filter 0.5s;
   filter:brightness(0.95);
 }
-.gallery img:hover{transform:scale(1.1) rotate(-2deg);box-shadow:0 0 35px var(--accent1);filter:brightness(1);}
+.gallery img:hover{
+  transform:scale(1.08) rotate(-1.5deg);
+  box-shadow:0 0 30px var(--accent1);filter:brightness(1)
+}
 
 .video{display:flex;gap:12px;margin-top:12px;justify-content:center;flex-wrap:wrap}
-video{width:48%;border-radius:16px;border:2px solid rgba(255,255,255,0.1);transition:transform 0.4s,box-shadow 0.4s;}
-video:hover{transform:scale(1.05) rotateY(5deg);box-shadow:0 0 40px var(--accent2);}
+video{
+  width:48%;border-radius:14px;border:2px solid rgba(255,255,255,0.1);
+  transition:transform 0.4s,box-shadow 0.4s;
+}
+video:hover{transform:scale(1.04);box-shadow:0 0 30px var(--accent2)}
 
 /* Footer */
-footer{text-align:center;margin:26px 0;color:#d1bfff;font-size:14px;text-shadow:0 0 12px rgba(0,0,0,0.3)}
+footer{text-align:center;margin:26px 0;color:#d1bfff;font-size:14px;text-shadow:0 0 10px rgba(0,0,0,0.3)}
 
-/* Hearts & stars & particles */
-.hearts,.stars,.particles{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden;}
-.heart{position:absolute;color:#ff7a00;font-size:22px;animation:float 6s linear infinite;opacity:0.8;text-shadow:0 0 12px #ff7a00,0 0 22px #ff7a00;transform-origin:center;}
+/* Floating hearts & stars */
+.hearts,.stars{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.heart{position:absolute;color:#ff7a00;font-size:22px;animation:float 6s linear infinite;opacity:0.8;text-shadow:0 0 10px #ff7a00,0 0 18px #ff7a00;transform-origin:center;}
 @keyframes float{0%{transform:translateY(100vh) scale(0.8) rotate(0deg);opacity:0}20%{opacity:1}100%{transform:translateY(-10vh) scale(1.3) rotate(360deg);opacity:0}}
+
 .star{position:absolute;color:white;font-size:2px;opacity:0.8;animation:twinkle 3s linear infinite;}
 @keyframes twinkle{0%,100%{opacity:0.8}50%{opacity:0.2}}
-.particle{position:absolute;background:white;border-radius:50%;width:2px;height:2px;opacity:0.7;animation:particleMove 5s linear infinite;}
-@keyframes particleMove{0%{transform:translateY(0) translateX(0);}100%{transform:translateY(-100vh) translateX(50vw);}}
 
 @media(max-width:768px){.gallery img,video{width:90%;height:auto}}
 </style>
 </head>
 <body>
 
+<!-- Hearts & Stars -->
 <div class="hearts" id="hearts"></div>
 <div class="stars" id="stars"></div>
-<div class="particles" id="particles"></div>
 
+<!-- Musique de fond -->
 <audio id="bgMusic" src="AUDIO6.m4a" loop></audio>
 
 <header>
@@ -161,7 +143,7 @@ footer{text-align:center;margin:26px 0;color:#d1bfff;font-size:14px;text-shadow:
   <p class="subtitle">De la part de Lucio — même loin, tu es tout près.</p>
   <p class="hint">👇 Clique ici pour commencer la surprise 🎧💜</p>
   <div class="audio-container">
-    <button id="btnStart">🎶 Appuie ici, écoute et lis ❤</button>
+    <button id="btnStart" class="btn">🎶 Appuie ici, écoute et lis ❤</button>
   </div>
 </header>
 
@@ -172,8 +154,10 @@ footer{text-align:center;margin:26px 0;color:#d1bfff;font-size:14px;text-shadow:
 Maé 💜, même si la distance nous sépare, mon cœur est toujours près du tien.  
 Chaque sourire que tu m’offres, chaque petit mot doux, chaque moment passé ensemble,  
 sont comme des étoiles qui illuminent mes journées ✨.  
+
 En ce jour si spécial 🎂, je te souhaite un océan de bonheur 🌊,  
 des rêves réalisés 🌈 et des instants remplis de rires et de tendresse 💫.  
+
 Sache que je t’aime plus que tout ❤,  
 et que mon cœur bat pour toi à chaque seconde, aujourd’hui et toujours 💖.  
 Tu es mon soleil ☀, ma douceur 🍯 et mon plus beau rêve 🌙.  
@@ -188,7 +172,7 @@ Joyeux anniversaire, Maé 💜💛 !
   <h2>Nos souvenirs</h2>
   <div class="gallery">
     <img src="image1.jpg" alt="Souvenir 1">
-    <img src="image2.JPG" alt="Souvenir 2">
+    <img src="image2.jpg" alt="Souvenir 2">
     <img src="image3.JPG" alt="Souvenir 3">
   </div>
   <div class="video">
@@ -200,10 +184,10 @@ Joyeux anniversaire, Maé 💜💛 !
 <section class="card surprise">
   <h2>Surprise</h2>
   <p style="margin-top:10px;line-height:1.5;">
-💌 Maé, chaque fois que tu deprime t'es triste ou heureux ❤,  
+💌 Maé, chaque fois que tu appuies sur ce cœur ❤,  
 sache que je t’envoie mille câlins virtuels 🤗💜  
-et des tonnes 💫 d'étoiles ✨ pour illuminer ta journée !  
-Tu es mon petit trésor 🍬🌸, mon rayon de soleil ☀💛 tu es a moi 
+et des tonnes de 💫 étoiles ✨ pour illuminer ta journée !  
+Tu es mon petit trésor 🍬🌸, mon rayon de soleil ☀💛  
 et rien ni personne ne pourra changer ça 💖🌙
   </p>
 </section>
@@ -220,25 +204,17 @@ document.getElementById('date').textContent=new Date().toLocaleDateString('fr-FR
 // Audio
 const bgAudio=document.getElementById('bgMusic');
 const msgAudio=document.getElementById('audio');
-const btnStart=document.getElementById('btnStart');
-bgAudio.volume=0.05;
-
-function playBgMusic() {
-  bgAudio.play().catch(()=>{}); 
+bgAudio.volume=0.2;
+document.getElementById('btnStart').addEventListener('click',()=>{
+  bgAudio.play();
   btnStart.textContent="🎶 Lecture en cours...";
   btnStart.style.opacity="0.8";
   btnStart.disabled=true;
-}
-
-// Bouton cliqué
-btnStart.addEventListener('click', playBgMusic);
-// Clic sur la page
-document.body.addEventListener('click', playBgMusic, { once: true });
-
+});
 msgAudio.addEventListener('play',()=>{bgAudio.volume=0.05;});
 msgAudio.addEventListener('pause',()=>{bgAudio.volume=0.2;});
 
-// Hearts
+// Floating hearts
 const heartsContainer=document.getElementById('hearts');
 function createHeart(){
   const heart=document.createElement('div');
@@ -250,11 +226,11 @@ function createHeart(){
   heartsContainer.appendChild(heart);
   setTimeout(()=>heartsContainer.removeChild(heart),6000);
 }
-setInterval(createHeart,200);
+setInterval(createHeart,250);
 
 // Stars
 const starsContainer=document.getElementById('stars');
-for(let i=0;i<120;i++){
+for(let i=0;i<100;i++){
   const star=document.createElement('div');
   star.className='star';
   star.style.left=Math.random()*100+'vw';
@@ -262,19 +238,6 @@ for(let i=0;i<120;i++){
   star.style.fontSize=(1+Math.random()*2)+'px';
   star.style.animationDuration=(2+Math.random()*3)+'s';
   starsContainer.appendChild(star);
-}
-
-// Particles
-const particlesContainer=document.getElementById('particles');
-for(let i=0;i<80;i++){
-  const p=document.createElement('div');
-  p.className='particle';
-  p.style.left=Math.random()*100+'vw';
-  p.style.top=Math.random()*100+'vh';
-  p.style.width=Math.random()*2+1+'px';
-  p.style.height=p.style.width;
-  p.style.animationDuration=(3+Math.random()*4)+'s';
-  particlesContainer.appendChild(p);
 }
 </script>
 </body>
