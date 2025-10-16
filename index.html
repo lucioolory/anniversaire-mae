@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="description" content="Joyeux anniversaire Maé ! Un message spécial de Lucio rempli d'amour et de souvenirs.">
 <title>Joyeux anniversaire Maé 🎂</title>
 <style>
@@ -20,14 +20,12 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   min-height:100vh;
-  font-family:"Poppins", "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
-  background: -webkit-linear-gradient(160deg,var(--bg1),var(--bg2));
-  background: linear-gradient(160deg,var(--bg1),var(--bg2));
+  font-family:"Poppins",sans-serif;
+  background:linear-gradient(160deg,var(--bg1),var(--bg2));
   color:var(--muted);
   overflow-x:hidden;
   scroll-behavior:smooth;
   position:relative;
-  -webkit-tap-highlight-color: transparent;
 }
 
 /* Header */
@@ -35,8 +33,7 @@ header{text-align:center;padding:50px 10px;z-index:2;position:relative}
 .title{
   font-size:44px;
   background:linear-gradient(45deg,var(--accent1),var(--accent2));
-  -webkit-background-clip:text;background-clip:text;
-  color:transparent;
+  -webkit-background-clip:text;color:transparent;
   text-shadow:0 0 18px var(--accent2);
 }
 #name{
@@ -57,12 +54,11 @@ header{text-align:center;padding:50px 10px;z-index:2;position:relative}
 /* Main & cards */
 main{max-width:950px;margin:auto;padding:20px;display:grid;gap:30px}
 .card{
-  background:rgba(26, 0, 38, 0.85); /* Fallback pour iPhone */
+  background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.1);
   border-radius:var(--radius);
   padding:24px;
   box-shadow:0 14px 35px rgba(0,0,0,0.45);
-  -webkit-backdrop-filter:blur(12px);
   backdrop-filter:blur(12px);
   transition:transform 0.5s,box-shadow 0.5s,background 0.5s;
   opacity:0;
@@ -76,16 +72,6 @@ main{max-width:950px;margin:auto;padding:20px;display:grid;gap:30px}
 }
 @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
 
-/* Message card spécifique */
-.message {
-  cursor: pointer;
-  transition: transform 0.3s;
-  -webkit-tap-highlight-color: transparent;
-}
-.message:hover{
-  transform:scale(1.02);
-}
-
 h2{color:white;margin-bottom:12px;text-shadow:0 0 10px rgba(0,0,0,0.5)}
 p{line-height:1.6}
 
@@ -95,8 +81,6 @@ p{line-height:1.6}
   color:white;padding:14px 26px;border-radius:14px;font-weight:600;margin-top:14px;
   cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;font-size:18px;
   border:2px solid white;animation:pulse 1.5s infinite;text-shadow:0 0 12px rgba(0,0,0,0.3);
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: none;
 }
 .btn:hover{
   transform:scale(1.12);
@@ -109,7 +93,6 @@ p{line-height:1.6}
 audio{
   border-radius:12px;background:rgba(255,255,255,0.15);padding:6px;outline:none;width:260px;
   transition:transform 0.3s,box-shadow 0.3s;
-  -webkit-appearance: none;
 }
 audio:hover{transform:scale(1.02);box-shadow:0 0 25px var(--accent1)}
 
@@ -129,8 +112,6 @@ audio:hover{transform:scale(1.02);box-shadow:0 0 25px var(--accent1)}
 video{
   width:48%;border-radius:14px;border:2px solid rgba(255,255,255,0.1);
   transition:transform 0.4s,box-shadow 0.4s;
-  -webkit-playsinline: true;
-  playsinline: true;
 }
 video:hover{transform:scale(1.04);box-shadow:0 0 30px var(--accent2)}
 
@@ -155,7 +136,7 @@ footer{text-align:center;margin:26px 0;color:#d1bfff;font-size:14px;text-shadow:
 <div class="stars" id="stars"></div>
 
 <!-- Musique de fond -->
-<audio id="bgMusic" src="AUDIO6.m4a" loop preload="auto"></audio>
+<audio id="bgMusic" src="AUDIO6.m4a" loop></audio>
 
 <header>
   <h1 class="title">Joyeux anniversaire, <span id="name">Maé</span> 💜</h1>
@@ -168,22 +149,22 @@ footer{text-align:center;margin:26px 0;color:#d1bfff;font-size:14px;text-shadow:
 
 <main>
 <section class="card message">
-  <h2>🎧 Un petit mot pour toi (Clique pour écouter ma voix)</h2>
+  <h2>Un petit mot pour toi</h2>
   <p>
 Maé 💜, même si la distance nous sépare, mon cœur est toujours près du tien.  
-Chaque sourire que tu m'offres, chaque petit mot doux, chaque moment passé ensemble,  
+Chaque sourire que tu m’offres, chaque petit mot doux, chaque moment passé ensemble,  
 sont comme des étoiles qui illuminent mes journées ✨.  
 
 En ce jour si spécial 🎂, je te souhaite un océan de bonheur 🌊,  
 des rêves réalisés 🌈 et des instants remplis de rires et de tendresse 💫.  
 
-Sache que je t'aime plus que tout ❤,  
-et que mon cœur bat pour toi à chaque seconde, aujourd'hui et toujours 💖.  
+Sache que je t’aime plus que tout ❤,  
+et que mon cœur bat pour toi à chaque seconde, aujourd’hui et toujours 💖.  
 Tu es mon soleil ☀, ma douceur 🍯 et mon plus beau rêve 🌙.  
 Joyeux anniversaire, Maé 💜💛 !
   </p>
   <div class="audio-container">
-    <audio id="audio" src="AUDIO5.m4a" controls preload="auto"></audio>
+    <audio id="audio" src="AUDIO5.m4a" controls></audio>
   </div>
 </section>
 
@@ -191,12 +172,12 @@ Joyeux anniversaire, Maé 💜💛 !
   <h2>Nos souvenirs</h2>
   <div class="gallery">
     <img src="image1.jpg" alt="Souvenir 1">
-    <img src="image2.JPG" alt="Souvenir 2">
+    <img src="image2.jpg" alt="Souvenir 2">
     <img src="image3.JPG" alt="Souvenir 3">
   </div>
   <div class="video">
-    <video src="video4.mp4" autoplay muted loop playsinline webkit-playsinline></video>
-    <video src="video3.mp4" autoplay muted loop playsinline webkit-playsinline></video>
+    <video src="video4.mp4" autoplay muted loop></video>
+    <video src="video3.mp4" autoplay muted loop></video>
   </div>
 </section>
 
@@ -204,9 +185,9 @@ Joyeux anniversaire, Maé 💜💛 !
   <h2>Surprise</h2>
   <p style="margin-top:10px;line-height:1.5;">
 💌 Maé, chaque fois que tu appuies sur ce cœur ❤,  
-sache que je t'envoie mille câlins virtuels 🤗💜  
+sache que je t’envoie mille câlins virtuels 🤗💜  
 et des tonnes de 💫 étoiles ✨ pour illuminer ta journée !  
-Tu es mon petit trésor 🍬🌸, mon rayon de soleil ☀💛 tu es a moi 
+Tu es mon petit trésor 🍬🌸, mon rayon de soleil ☀💛,tu es a moi   
 et rien ni personne ne pourra changer ça 💖🌙
   </p>
 </section>
@@ -220,84 +201,44 @@ et rien ni personne ne pourra changer ça 💖🌙
 // Footer date
 document.getElementById('date').textContent=new Date().toLocaleDateString('fr-FR',{year:'numeric',month:'long',day:'numeric'});
 
-// Audio - Version optimisée iPhone
-const bgAudio = document.getElementById('bgMusic');
-const msgAudio = document.getElementById('audio');
-const btnStart = document.getElementById('btnStart');
-
-// Configuration audio iPhone
-bgAudio.volume = 0.3;
-bgAudio.preload = 'auto';
-
-// Démarrer la musique de fond
-btnStart.addEventListener('click', () => {
-  bgAudio.play().catch(e => {
-    console.log("Background audio blocked:", e);
-    // Fallback pour iPhone
-    btnStart.textContent = "🎶 Tapez pour activer l'audio";
-  });
-  btnStart.textContent = "🎶 Lecture en cours...";
-  btnStart.style.opacity = "0.8";
-  btnStart.disabled = true;
+// Audio
+const bgAudio=document.getElementById('bgMusic');
+const msgAudio=document.getElementById('audio');
+bgAudio.volume=0.05;
+document.getElementById('btnStart').addEventListener('click',()=>{
+  bgAudio.play();
+  btnStart.textContent="🎶 Lecture en cours...";
+  btnStart.style.opacity="0.8";
+  btnStart.disabled=true;
 });
-
-// Gestion du volume optimisée iPhone
-msgAudio.addEventListener('play', function() {
-    bgAudio.volume = 0.05;  // Baisse vraiment le fond pendant le vocal
-});
-
-msgAudio.addEventListener('ended', function() {
-    bgAudio.volume = 0.3;   // Remet le volume normal
-});
-
-// FORCER la lecture du vocal (compatible iPhone)
-document.querySelector('.message').addEventListener('click', function() {
-    msgAudio.currentTime = 0;
-    msgAudio.play().catch(e => {
-        console.log("Vocal audio blocked on iPhone:", e);
-        alert("Tapez sur le lecteur audio pour activer le son");
-    });
-});
+msgAudio.addEventListener('play',()=>{bgAudio.volume=0.05;});
+msgAudio.addEventListener('pause',()=>{bgAudio.volume=0.2;});
 
 // Floating hearts
-const heartsContainer = document.getElementById('hearts');
-function createHeart() {
-  const heart = document.createElement('div');
-  heart.className = 'heart';
-  heart.style.left = Math.random() * 100 + 'vw';
-  heart.style.fontSize = (14 + Math.random() * 25) + 'px';
-  heart.style.animationDuration = (4 + Math.random() * 4) + 's';
-  heart.textContent = '❤';
+const heartsContainer=document.getElementById('hearts');
+function createHeart(){
+  const heart=document.createElement('div');
+  heart.className='heart';
+  heart.style.left=Math.random()*100+'vw';
+  heart.style.fontSize=(14+Math.random()*25)+'px';
+  heart.style.animationDuration=(4+Math.random()*4)+'s';
+  heart.textContent='❤';
   heartsContainer.appendChild(heart);
-  setTimeout(() => {
-    if (heartsContainer.contains(heart)) {
-      heartsContainer.removeChild(heart);
-    }
-  }, 6000);
+  setTimeout(()=>heartsContainer.removeChild(heart),6000);
 }
-setInterval(createHeart, 250);
+setInterval(createHeart,250);
 
 // Stars
-const starsContainer = document.getElementById('stars');
-for(let i = 0; i < 100; i++) {
-  const star = document.createElement('div');
-  star.className = 'star';
-  star.style.left = Math.random() * 100 + 'vw';
-  star.style.top = Math.random() * 100 + 'vh';
-  star.style.fontSize = (1 + Math.random() * 2) + 'px';
-  star.style.animationDuration = (2 + Math.random() * 3) + 's';
+const starsContainer=document.getElementById('stars');
+for(let i=0;i<100;i++){
+  const star=document.createElement('div');
+  star.className='star';
+  star.style.left=Math.random()*100+'vw';
+  star.style.top=Math.random()*100+'vh';
+  star.style.fontSize=(1+Math.random()*2)+'px';
+  star.style.animationDuration=(2+Math.random()*3)+'s';
   starsContainer.appendChild(star);
 }
-
-// Correction pour les vidéos iPhone
-document.addEventListener('DOMContentLoaded', function() {
-  const videos = document.querySelectorAll('video');
-  videos.forEach(video => {
-    video.setAttribute('playsinline', '');
-    video.setAttribute('webkit-playsinline', '');
-    video.muted = true; // Important pour iPhone
-  });
-});
 </script>
 </body>
 </html>
